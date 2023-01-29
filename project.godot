@@ -1,0 +1,154 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "Ability",
+"language": "GDScript",
+"path": "res://scenes/abilities/ability.gd"
+}, {
+"base": "EntityState",
+"class": "BlockState",
+"language": "GDScript",
+"path": "res://scripts/player_states/block_state.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Entity",
+"language": "GDScript",
+"path": "res://scripts/entities/entity.gd"
+}, {
+"base": "State",
+"class": "EntityState",
+"language": "GDScript",
+"path": "res://scripts/entity_state.gd"
+}, {
+"base": "EntityState",
+"class": "FallState",
+"language": "GDScript",
+"path": "res://scripts/player_states/fall_state.gd"
+}, {
+"base": "EntityState",
+"class": "IdleState",
+"language": "GDScript",
+"path": "res://scripts/player_states/idle_state.gd"
+}, {
+"base": "EntityState",
+"class": "JumpState",
+"language": "GDScript",
+"path": "res://scripts/player_states/jump_state.gd"
+}, {
+"base": "EntityState",
+"class": "Land",
+"language": "GDScript",
+"path": "res://scripts/player_states/land_state.gd"
+}, {
+"base": "EntityState",
+"class": "MeleeAttackState",
+"language": "GDScript",
+"path": "res://scripts/player_states/melee_attack_state.gd"
+}, {
+"base": "Entity",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scripts/entities/player_controller.gd"
+}, {
+"base": "EntityState",
+"class": "RollState",
+"language": "GDScript",
+"path": "res://scripts/player_states/roll_state.gd"
+}, {
+"base": "EntityState",
+"class": "RunState",
+"language": "GDScript",
+"path": "res://scripts/player_states/run_state.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://scripts/state.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://scripts/state_machine.gd"
+}, {
+"base": "Reference",
+"class": "StateMsg",
+"language": "GDScript",
+"path": "res://scripts/state_msg.gd"
+} ]
+_global_script_class_icons={
+"Ability": "",
+"BlockState": "",
+"Entity": "",
+"EntityState": "",
+"FallState": "",
+"IdleState": "",
+"JumpState": "",
+"Land": "",
+"MeleeAttackState": "",
+"Player": "",
+"RollState": "",
+"RunState": "",
+"State": "",
+"StateMachine": "",
+"StateMsg": ""
+}
+
+[application]
+
+config/name="Sidescroller 1"
+run/main_scene="res://scenes/mainscene.tscn"
+config/icon="res://icon.png"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[input]
+
+move_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777231,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777233,"unicode":0,"echo":false,"script":null)
+ ]
+}
+jump={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
+}
+melee_attack={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+roll={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":67,"unicode":0,"echo":false,"script":null)
+ ]
+}
+block={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

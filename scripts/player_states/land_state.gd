@@ -1,0 +1,27 @@
+class_name Land
+extends EntityState
+
+
+func enter(_msg := {}) -> void:
+	.enter(_msg)
+	ability = entity.start_ability("land")
+	
+func update(_delta: float) -> StateMsg:
+	return empty_state
+
+func physics_update(_delta: float) -> StateMsg:
+	entity.update_ability("land")
+	
+	if not ability.is_animating and entity.is_on_floor():
+		if Input.is_action_pressed("jump"):
+			return StateMsg.new("Jump")
+		elif Input.is_action_pressed("move_right") or Input.is_action_pressed("move_left"):
+			return StateMsg.new("Run")
+		elif Input.is_action_pressed("roll"):
+			return StateMsg.new("Roll")
+		elif Input.is_action_pressed("block"):
+			return StateMsg.new("Block")
+		return StateMsg.new("Idle")
+
+	return empty_state
+
